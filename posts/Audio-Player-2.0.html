@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="../asset/stylesheets/normalize.css"><p>﻿</p>
+<h1 id="audio-player-2-0">Audio-Player-2.0</h1>
+<h2 id="-">新功能</h2>
+<ol>
+<li>播放進度條</li>
+<li>新增列表</li>
+<li>增加歌詞顯示功能</li>
+<li>專輯圖片轉動，感覺像以前的唱片機</li>
+<li>音量控制條從 input 的 <code>range</code> 元素改用 noUiSlider</li>
+<li>UI 更新</li>
+<li>瀏覽器的網頁標題會表示音樂是否播放，若有載入動態歌詞檔案則顯示目前歌詞</li>
+<li>靜音設定後重整頁面仍可恢復原音量</li>
+</ol>
+<h2 id="-">功能</h2>
+<p>1.音量記憶</p>
+<p>2.熱鍵播放、暫停、控制音量</p>
+<p>3.音量大小程度會改變喇叭圖示</p>
+<h3 id="-">熱鍵</h3>
+<p><code>Ctrl</code>+<code>Up</code>：提高音量</p>
+<p><code>Ctrl</code>+<code>Down</code>：降低音量</p>
+<p><code>Space(空白鍵)</code>：播放/暫停音樂</p>
+<h2 id="-">技術</h2>
+<h3 id="html-5-audio-">HTML 5 Audio 技術</h3>
+<p>使用 HTML 5 的 Audio 標籤，再使用 JavaScript + jQuery 控制</p>
+<h2 id="-">感謝</h2>
+<p>1.SkyArrow 寫的文章寫了 HTML <code>audio</code> 的用法和參數，本播放器的大部分程式碼採用 SkyArrow 的寫法，在此特別感謝他</p>
+<p>2.播放進度、音量控制條採用 <a href="http://refreshless.com/nouislider/" title="noUiSlider 的官網">noUiSlider</a></p>
+<p>3.專輯圖片轉動的技術參考 ccbikai 做的 <a href="https://coding.net/u/ccbikai/p/musicplayer/git">HTML5 网页音乐播放器</a></p>
+<h2 id="bug">Bug</h2>
+<p>不可使用本機音樂源，會發生錯誤</p>

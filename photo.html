@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Photo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    html {
+        background: #666;
+        height: 100%;
+    }
+    
+    body {
+        font-family: "Roboto", "文泉驛正黑", WenQuanYi Zen Hei, 微軟正黑體, Microsoft JhengHei, Microsoft JhengHei, Droid Sans, PMingLiU, sans-serif;
+        height: 100%;
+    }
+    
+    .btn {
+        font-family: "Roboto", "文泉驛正黑", WenQuanYi Zen Hei, 微軟正黑體, Microsoft JhengHei, Microsoft JhengHei, Droid Sans, PMingLiU, sans-serif;
+    }
+    
+    .photo {
+        background-image: url(https://unsplash.it/400/?random);
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        height: 400px;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    .margin {
+        margin: auto 2em;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="photo"></div>
+            </div>
+            <div class="panel-footer">
+                <div class="time center">
+                    00:00
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <button class="btn btn-info btn-lg margin">歷史紀錄</button>
+            <button class="btn btn-primary btn-lg margin">即時瀏覽</button>
+        </div>
+    </div>
+    <script src="//cdn.bootcss.com/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
+    </script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+    (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
