@@ -27,32 +27,25 @@
             <p>清流小黑狗製作</p>
         </div>
         <ul class="actions">
-        	<a href="#one" class="btn btn-default"><i class="icons">arrow downward</i>進入</a>
+            <a href="#page" class="btn waves-effect waves-light btn-default"><span class="material-icons arrow downward"></span> 進入</a>
         </ul>
-        
     </header>
-    <div class="container">
-        <div class="one" id="one"></div>
+    <div class="overlay"></div>
+    <span class="material-icons menu waves-effect waves-light"></span>
+    <ul class="sidenav">
+        <li class="item">首頁</li>
+        <li class="item">郭子儀</li>
+        <li class="item"></li>
+        <li class="item">關於</li>
+        <li class="item"></li>
+    </ul>
+    <div class="container" id="page">
+        <div class="one shadow-3" id="one"></div>
         <div class="two" id="two"></div>
     </div>
     <script src="assets/js/zepto.min.js"></script>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-    $(function() {
-        $('a[href*="#"]:not([href="#"])').on("click",(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        }));
-    });
-    </script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>

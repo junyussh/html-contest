@@ -2,7 +2,10 @@
 
 @import "layout";
 @import "compass/css3";
+@import "mixin";
 @import "grid";
+@import "waves";
+@import "icons";
 
 html:lang(zh-Hans),
 html:lang(zh-CN) {
@@ -18,8 +21,13 @@ body {
     font-size: 16px;
 }
 
+* {
+    @include transition(0.2s ease-in-out);
+}
+
 .header {
     @include background(linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://unsplash.com/photos/5Dga0T0x6GY/download) no-repeat local center (center / cover));
+    @include transition(background 0.3s ease-in-out);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -41,4 +49,47 @@ body {
 ul.actions {
     list-style: none;
     padding-left: 0;
+}
+
+@for $i from 1 through 5 {
+    .shadow-#{$i} {
+        @include shadow($i);
+    }
+}
+
+.sidenav {
+    visibility: hidden;
+    z-index: 99;
+    float: left;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0px;
+    width: 13em;
+    height: 100%;
+    background-color: #fff;
+    padding-left: 0;
+    li {
+        padding: 20px 15px;
+        &:hover {
+            background-color: #bdbdbd;
+        }
+    }
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff5722;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-button {
+    width: 8px;
+    height: 0;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
 }
