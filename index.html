@@ -22,18 +22,24 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <header class="header">
-        <div class="content">
+        <div class="baner">
             <h1>台北古蹟</h1>
             <p>清流小黑狗製作</p>
         </div>
+        <ul class="actions">
+        	<a href="#one" class="btn btn-default"><i class="icons">arrow downward</i>進入</a>
+        </ul>
+        
     </header>
     <div class="container">
+        <div class="one" id="one"></div>
+        <div class="two" id="two"></div>
     </div>
     <script src="assets/js/zepto.min.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
     $(function() {
-        $('a[href*="#"]:not([href="#"])').click(function() {
+        $('a[href*="#"]:not([href="#"])').on("click",(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                 var target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -44,7 +50,7 @@
                     return false;
                 }
             }
-        });
+        }));
     });
     </script>
 </body>
