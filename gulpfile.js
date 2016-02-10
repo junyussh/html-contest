@@ -31,7 +31,8 @@ gulp.task("compass", function() {
             path.extname = ".css";
         }))
         .pipe(minifyCSS())
-        .pipe(gulp.dest('assets/stylesheets'));
+        .pipe(gulp.dest('assets/stylesheets'))
+        .pipe(connect.reload());
 });
 gulp.task('html', function() {
     gulp.src('*.html')

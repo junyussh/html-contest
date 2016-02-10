@@ -1,3 +1,51 @@
 /* Colors */
 $button-color: #039be5 !default;
+$background-color: #eee; 
 
+$red: (
+	"base" : #F44336,
+	"lighten-1": #EF5350,
+	"lighten-2": #E57373,
+	"darken-1": #E53935,
+	"darken-2": #D32F2F
+	);
+
+$blue: (
+	"base" : #2196F3,
+	"lighten-1": #42A5F5,
+	"lighten-2": #64B5F6,
+	"darken-1": #1E88E5,
+	"darken-2": #1976D2
+	);
+
+$deep_purple: (
+	"base" : #673AB7,
+	"lighten-1": #7E57C2,
+	"lighten-2": #9575CD,
+	"darken-1": #5E35B1,
+	"darken-2": #512DA8
+	);
+
+$cyan: (
+	"base" : #00BCD4,
+	"lighten-1": #26C6DA,
+	"lighten-2": #4DD0E1,
+	"darken-1": #00ACC1,
+	"darken-2": #0097A7
+	);
+
+$green: (
+	"base" : #4CAF50,
+	"lighten-1": #66BB6A,
+	"lighten-2": #81C784,
+	"darken-1": #43A047,
+	"darken-2": #388E3C
+	);
+
+$grey: (
+	"base" : #9E9E9E,
+	"lighten-1": #BDBDBD,
+	"lighten-2": #E0E0E0,
+	"darken-1": #757575,
+	"darken-2": #616161
+	);

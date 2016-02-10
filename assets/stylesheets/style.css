@@ -295,91 +295,6 @@ ol, ul {
   padding: 2em 3em;
 }
 
-.sidenav-pusher {
-  position: relative;
-  left: 0;
-  height: 100%;
-  z-index: 99;
-  -moz-transition: -moz-transform 0.5s;
-  -o-transition: -o-transform 0.5s;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-}
-.sidenav-pusher:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  -moz-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
-  -o-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
-  -webkit-transition: opacity 0.5s, width 0.1s, height 0.1s;
-  -webkit-transition-delay: 0s, 0.5s, 0.5s;
-  transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
-}
-
-.sidenav-effect {
-  position: relative;
-}
-.sidenav-effect.sidenav-open {
-  overflow: hidden;
-}
-.sidenav-effect.sidenav-open .sidenav-pusher {
-  -moz-transform: translate3d(300px, 0, 0);
-  -ms-transform: translate3d(300px, 0, 0);
-  -webkit-transform: translate3d(300px, 0, 0);
-  transform: translate3d(300px, 0, 0);
-}
-.sidenav-effect.sidenav-open .sidenav {
-  visibility: visible;
-  -moz-transition: -moz-transform 0.5s;
-  -o-transition: -o-transform 0.5s;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-}
-
-.sidenav-open .sidenav-pusher:after {
-  width: 100%;
-  height: 100%;
-  opacity: 1 !important;
-  -moz-transition: opacity 0.5s;
-  -o-transition: opacity 0.5s;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-}
-
-.sidenav {
-  -moz-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
-  -webkit-transition: all 1s ease-in;
-  transition: all 1s ease-in;
-  -moz-transform: translate3d(-100%, 0, 0);
-  -ms-transform: translate3d(-100%, 0, 0);
-  -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
-  visibility: hidden;
-  z-index: 100;
-  float: left;
-  position: absolute;
-  margin: 0;
-  top: 0;
-  left: 0px;
-  width: 300px;
-  height: 100%;
-  background-color: #fff;
-  padding-left: 0;
-}
-.sidenav:after {
-  display: none;
-}
-.sidenav li {
-  padding: 20px 15px;
-}
-.sidenav li:hover {
-  background-color: #bdbdbd;
-}
-
 /*!
  * Waves v0.6.0
  * http://fian.my.id/Waves
@@ -499,9 +414,9 @@ a.waves-effect .waves-ripple {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url(../iconfonts/MaterialIcons-Regular.eot);
+  src: url(../fonts/MaterialIcons-Regular.eot);
   /* For IE6-8 */
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../iconfonts/MaterialIcons-Regular.woff2) format("woff2"), url(../iconfonts/MaterialIcons-Regular.woff) format("woff"), url(../iconfonts/MaterialIcons-Regular.ttf) format("truetype");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/MaterialIcons-Regular.woff2) format("woff2"), url(../fonts/MaterialIcons-Regular.woff) format("woff"), url(../fonts/MaterialIcons-Regular.ttf) format("truetype");
 }
 .material-icons {
   -moz-box-sizing: content-box;
@@ -549,7 +464,7 @@ a.waves-effect .waves-ripple {
   position: fixed;
   top: 8px;
   left: 20px;
-  z-index: 98;
+  z-index: 101;
   font-size: 2em;
   padding: 5px;
 }
@@ -641,16 +556,16 @@ a.waves-effect .waves-ripple {
   content: "\E5DB";
 }
 
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lato Regular"), local("Lato-Regular"), url(../fonts/Lato.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
 html:lang(zh-Hans),
 html:lang(zh-CN) {
   font-family: "Biaodian Pro Sans GB", "Helvetica Neue", Helvetica, Arial, "Han Heiti GB", sans-serif;
-}
-
-html,
-body,
-.sidenav-pusher,
-.sidenav-effect {
-  height: 100%;
 }
 
 body {
@@ -658,8 +573,12 @@ body {
   padding: 10px auto;
   line-height: 1.5em;
   color: rgba(0, 0, 0, 0.87);
-  font-family: "Open Sans", "文泉驛正黑", WenQuanYi Zen Hei, 微軟正黑體, Microsoft JhengHei, Microsoft JhengHei, Droid Sans, PMingLiU, Helvetica, sans-serif;
+  font-family: "Lato", "文泉驛正黑", WenQuanYi Zen Hei, 微軟正黑體, Microsoft JhengHei, Microsoft JhengHei, Droid Sans, PMingLiU, Helvetica, sans-serif;
   font-size: 16px;
+}
+
+.nav-content {
+  background-color: #eee;
 }
 
 *, *:before, *:after {
@@ -721,8 +640,11 @@ ul.actions {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
-.main {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+.article {
+  background-color: #fff;
+  font-family: "Lato", Helvetica , Arial,"FZLTXHB--B51-0", sans-serif;
+  margin: 3em 2em;
+  padding: 3em 2em;
 }
 
 ::-webkit-scrollbar-thumb {

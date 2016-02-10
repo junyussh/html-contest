@@ -1,21 +1,24 @@
 @charset "UTF-8";
+
 @import "layout";
 @import "compass/css3";
 @import "mixin";
 @import "grid";
-@import "sidemenu";
 @import "waves";
 @import "icons";
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local("Lato Regular"), local("Lato-Regular"), url(../fonts/Lato.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+
 html:lang(zh-Hans),
 html:lang(zh-CN) {
     font-family: "Biaodian Pro Sans GB", "Helvetica Neue", Helvetica, Arial, "Han Heiti GB", sans-serif;
-}
-
-html,
-body,
-.sidenav-pusher,
-.sidenav-effect {
-    height: 100%;
 }
 
 body {
@@ -23,8 +26,12 @@ body {
     padding: 10px auto;
     line-height: 1.5em;
     color: rgba(0, 0, 0, 0.87);
-    font-family: "Open Sans", "文泉驛正黑", WenQuanYi Zen Hei, 微軟正黑體, Microsoft JhengHei, Microsoft JhengHei, Droid Sans, PMingLiU, Helvetica, sans-serif;
+    font-family: "Lato", "文泉驛正黑", WenQuanYi Zen Hei, 微軟正黑體, Microsoft JhengHei, Microsoft JhengHei, Droid Sans, PMingLiU, Helvetica, sans-serif;
     font-size: 16px;
+}
+
+.nav-content {
+    background-color: $background-color;
 }
 
 * {
@@ -34,8 +41,6 @@ body {
         @extend *;
     }
 }
-
-.content {}
 
 .header {
     @include background(linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/5Dga0T0x6GY.jpg) no-repeat local center (center / cover));
@@ -69,8 +74,11 @@ ul.actions {
     }
 }
 
-.main {
-    @include shadow(3);
+.article {
+    background-color: #fff;
+    font-family: "Lato", Helvetica , Arial,"FZLTXHB--B51-0", sans-serif;
+    margin: 3em 2em;
+    padding: 3em 2em;
 }
 
 ::-webkit-scrollbar-thumb {
