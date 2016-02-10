@@ -1,15 +1,21 @@
 @charset "UTF-8";
-
 @import "layout";
 @import "compass/css3";
 @import "mixin";
 @import "grid";
+@import "sidemenu";
 @import "waves";
 @import "icons";
-
 html:lang(zh-Hans),
 html:lang(zh-CN) {
     font-family: "Biaodian Pro Sans GB", "Helvetica Neue", Helvetica, Arial, "Han Heiti GB", sans-serif;
+}
+
+html,
+body,
+.sidenav-pusher,
+.sidenav-effect {
+    height: 100%;
 }
 
 body {
@@ -22,11 +28,17 @@ body {
 }
 
 * {
-    @include transition(0.2s ease-in-out);
+    @include box-sizing(border-box);
+    &:before,
+    &:after {
+        @extend *;
+    }
 }
 
+.content {}
+
 .header {
-    @include background(linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://unsplash.com/photos/5Dga0T0x6GY/download) no-repeat local center (center / cover));
+    @include background(linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/5Dga0T0x6GY.jpg) no-repeat local center (center / cover));
     @include transition(background 0.3s ease-in-out);
     height: 100vh;
     display: flex;
@@ -57,24 +69,8 @@ ul.actions {
     }
 }
 
-.sidenav {
-    visibility: hidden;
-    z-index: 99;
-    float: left;
-    position: fixed;
-    margin: 0;
-    top: 0;
-    left: 0px;
-    width: 13em;
-    height: 100%;
-    background-color: #fff;
-    padding-left: 0;
-    li {
-        padding: 20px 15px;
-        &:hover {
-            background-color: #bdbdbd;
-        }
-    }
+.main {
+    @include shadow(3);
 }
 
 ::-webkit-scrollbar-thumb {

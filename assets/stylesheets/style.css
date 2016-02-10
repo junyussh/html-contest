@@ -295,6 +295,91 @@ ol, ul {
   padding: 2em 3em;
 }
 
+.sidenav-pusher {
+  position: relative;
+  left: 0;
+  height: 100%;
+  z-index: 99;
+  -moz-transition: -moz-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+.sidenav-pusher:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  -moz-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+  -o-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+  -webkit-transition: opacity 0.5s, width 0.1s, height 0.1s;
+  -webkit-transition-delay: 0s, 0.5s, 0.5s;
+  transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+}
+
+.sidenav-effect {
+  position: relative;
+}
+.sidenav-effect.sidenav-open {
+  overflow: hidden;
+}
+.sidenav-effect.sidenav-open .sidenav-pusher {
+  -moz-transform: translate3d(300px, 0, 0);
+  -ms-transform: translate3d(300px, 0, 0);
+  -webkit-transform: translate3d(300px, 0, 0);
+  transform: translate3d(300px, 0, 0);
+}
+.sidenav-effect.sidenav-open .sidenav {
+  visibility: visible;
+  -moz-transition: -moz-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+.sidenav-open .sidenav-pusher:after {
+  width: 100%;
+  height: 100%;
+  opacity: 1 !important;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.sidenav {
+  -moz-transition: all 1s ease-in;
+  -o-transition: all 1s ease-in;
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+  -moz-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+  visibility: hidden;
+  z-index: 100;
+  float: left;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  padding-left: 0;
+}
+.sidenav:after {
+  display: none;
+}
+.sidenav li {
+  padding: 20px 15px;
+}
+.sidenav li:hover {
+  background-color: #bdbdbd;
+}
+
 /*!
  * Waves v0.6.0
  * http://fian.my.id/Waves
@@ -419,6 +504,9 @@ a.waves-effect .waves-ripple {
   src: local("Material Icons"), local("MaterialIcons-Regular"), url(../iconfonts/MaterialIcons-Regular.woff2) format("woff2"), url(../iconfonts/MaterialIcons-Regular.woff) format("woff"), url(../iconfonts/MaterialIcons-Regular.ttf) format("truetype");
 }
 .material-icons {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
   position: relative;
   font-family: "Material Icons";
   font-weight: normal;
@@ -449,15 +537,19 @@ a.waves-effect .waves-ripple {
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
-  -moz-transition: -moz-transform 1s ease-in-out;
-  -o-transition: -o-transform 1s ease-in-out;
-  -webkit-transition: -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out;
+  -moz-transition: -moz-transform 0.3s ease-in-out;
+  -o-transition: -o-transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  -moz-transform-origin: center center 50%;
+  -ms-transform-origin: center center 50%;
+  -webkit-transform-origin: center center 50%;
+  transform-origin: center center 50%;
   color: #c0c0c0;
   position: fixed;
   top: 8px;
   left: 20px;
-  z-index: 1000;
+  z-index: 98;
   font-size: 2em;
   padding: 5px;
 }
@@ -465,9 +557,9 @@ a.waves-effect .waves-ripple {
   content: "\E5D2";
 }
 .material-icons.menu:active {
-  -moz-animation: rotate 1s ease 0;
-  -webkit-animation: rotate 1s ease 0;
-  animation: rotate 1s ease 0;
+  -moz-animation: rotate 1s ease 1s;
+  -webkit-animation: rotate 1s ease 1s;
+  animation: rotate 1s ease 1s;
 }
 @-moz-keyframes rotate {
   from {
@@ -507,9 +599,9 @@ a.waves-effect .waves-ripple {
   content: "\E5CD";
 }
 .material-icons.menu.close:active {
-  -moz-animation: rotate 0.3s ease 0;
-  -webkit-animation: rotate 0.3s ease 0;
-  animation: rotate 0.3s ease 0;
+  -moz-animation: rotate 1s ease 1s;
+  -webkit-animation: rotate 1s ease 1s;
+  animation: rotate 1s ease 1s;
 }
 @-moz-keyframes rotate {
   from {
@@ -554,6 +646,13 @@ html:lang(zh-CN) {
   font-family: "Biaodian Pro Sans GB", "Helvetica Neue", Helvetica, Arial, "Han Heiti GB", sans-serif;
 }
 
+html,
+body,
+.sidenav-pusher,
+.sidenav-effect {
+  height: 100%;
+}
+
 body {
   height: 100%;
   padding: 10px auto;
@@ -563,19 +662,18 @@ body {
   font-size: 16px;
 }
 
-* {
-  -moz-transition: ease-in-out 0.2s;
-  -o-transition: ease-in-out 0.2s;
-  -webkit-transition: ease-in-out 0.2s;
-  transition: ease-in-out 0.2s;
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .header {
-  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC41Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url(https://unsplash.com/photos/5Dga0T0x6GY/download) no-repeat local center center/cover;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 0.5))), url(https://unsplash.com/photos/5Dga0T0x6GY/download) no-repeat local center center/cover;
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://unsplash.com/photos/5Dga0T0x6GY/download) no-repeat local center center/cover;
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://unsplash.com/photos/5Dga0T0x6GY/download) no-repeat local center center/cover;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://unsplash.com/photos/5Dga0T0x6GY/download) no-repeat local center center/cover;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC41Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url(../images/5Dga0T0x6GY.jpg) no-repeat local center center/cover;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 0.5))), url(../images/5Dga0T0x6GY.jpg) no-repeat local center center/cover;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/5Dga0T0x6GY.jpg) no-repeat local center center/cover;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/5Dga0T0x6GY.jpg) no-repeat local center center/cover;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/5Dga0T0x6GY.jpg) no-repeat local center center/cover;
   -moz-transition: background 0.3s ease-in-out;
   -o-transition: background 0.3s ease-in-out;
   -webkit-transition: background 0.3s ease-in-out;
@@ -623,24 +721,8 @@ ul.actions {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
-.sidenav {
-  visibility: hidden;
-  z-index: 99;
-  float: left;
-  position: fixed;
-  margin: 0;
-  top: 0;
-  left: 0px;
-  width: 13em;
-  height: 100%;
-  background-color: #fff;
-  padding-left: 0;
-}
-.sidenav li {
-  padding: 20px 15px;
-}
-.sidenav li:hover {
-  background-color: #bdbdbd;
+.main {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 ::-webkit-scrollbar-thumb {

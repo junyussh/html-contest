@@ -1,4 +1,3 @@
-    $(function() {
         $('a[href*="#"]:not([href="#"])').on("click", (function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                 var target = $(this.hash);
@@ -13,11 +12,10 @@
         }));
         $(".menu").on("click", function() {
             if ($(this).hasClass("close")) {
-                $(this).removeClass("close");
-                $(".sidenav").css("visibility", "hidden");
+                $(this).css("transform", "rotate(-180deg)").removeClass("close");
+                $(".sidenav-effect").removeClass("sidenav-open");
             } else {
-                $(this).addClass("close");
-                $(".sidenav").css("visibility", "visible");
+                $(this).css("transform", "rotate(90deg)").addClass("close");
+                $(".sidenav-effect").addClass("sidenav-open");
             }
         });
-    });
