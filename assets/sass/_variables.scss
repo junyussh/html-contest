@@ -1,7 +1,9 @@
 /* Colors */
 $button-color: #039be5 !default;
-$background-color: #eee; 
 
+/* Colors From Google Material Design
+https://www.google.com/design/spec/style/color.html
+*/
 $red: (
 	"base" : #F44336,
 	"lighten-1": #EF5350,
@@ -34,6 +36,30 @@ $deep_purple: (
 	"darken-2": #512DA8
 	);
 
+$orange: (
+	"base" : #FF9800,
+	"lighten-1": #FFA726,
+	"lighten-2": #FFB74D,
+	"darken-1": #FB8C00,
+	"darken-2": #F57C00
+	);
+
+$deep_orange: (
+	"base" : #FF5722,
+	"lighten-1": #FF7043,
+	"lighten-2": #FF8A65,
+	"darken-1": #F4511E,
+	"darken-2": #E64A19
+	);
+
+$yellow: (
+	"base" : #FFEB3B,
+	"lighten-1": #FFEE58,
+	"lighten-2": #FFF176,
+	"darken-1": #FDD835,
+	"darken-2": #FBC02D
+	);
+
 $cyan: (
 	"base" : #00BCD4,
 	"lighten-1": #26C6DA,
@@ -57,3 +83,38 @@ $grey: (
 	"darken-1": #757575,
 	"darken-2": #616161
 	);
+
+$colors: (
+	"red" : $red,
+	"blue": $blue,
+	"indigo": $indigo,
+	"deep_purple": $deep_purple,
+	"orange": $orange,
+	"deep_orange": $deep_orange,
+	"yellow": $yellow,
+	"cyan": $cyan,
+	"green": $green,
+	"grey": $grey
+	);
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    .#{$color-name}-#{$color-type} {
+    	background-color: $color_value !important;
+    }
+  }
+}
+
+@function color($color,$type) {
+  @if map-has-key($colors,$color) {
+    $color_name: map-get($colors,$color);
+    @if map-has-key($color_name,$type) {
+      @return map-get($color_name,$type);
+    }
+  }
+  @warn "Unknown "$color"";
+  @return null;
+}
+$link-color: color("blue", "base");
+$list-hover: color("grey","lighten-1");
+$background-color: color("grey","lighten-2"); 

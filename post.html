@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/sidenav.css">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/normalize.css">
+    <script src="assets/js/jquery.min.js"></script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 </head>
 
@@ -23,125 +24,186 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="nav-container">
+        <div class="fixed-action-btn">
+            <span class="btn-floating btn-large waves-light waves-effect"><i class="material-icons">&#xE145;</i></span>
+            <ul>
+                <li><a href="#page" class="btn-floating waves-effect waves-light orange-base"><i class="material-icons">book</i></a></li>
+                <li><a class="btn-floating waves-effect waves-light blue-base scroll" onclick="jQuery('html,body').animate({scrollTop:0},0);"><i class="material-icons">&#xE25A;</i></a></li>
+                <li><a class="btn-floating waves-effect waves-light cyan-base menu"><i class="material-icons"></i></a></li>
+            </ul>
+        </div>
         <div class="nav-pusher">
-            <span class="material-icons menu waves-effect waves-light"></span>
+            <span class="material-icons menu-button waves-effect waves-light"></span>
             <nav class="nav-menu">
-                <h2 class="icon icon-lab">Sidebar</h2>
                 <ul>
-                    <li><a class="icon icon-data" href="#">Data Management</a></li>
-                    <li><a class="icon icon-location" href="#">Location</a></li>
-                    <li><a class="icon icon-study" href="#">Study</a></li>
-                    <li><a class="icon icon-photo" href="#">Collections</a></li>
-                    <li><a class="icon icon-wallet" href="#">Credits</a></li>
+                    <li class="blod"><a class="waves-teal waves-effect" href="/"><i class="material-icons">home</i> 首頁</a></li>
+                    <li class="blod active"><a class="waves-teal waves-effect" href="#">Location</a></li>
+                    <li class="blod"><a class="waves-teal waves-effect" href="#">Study</a></li>
+                    <li class="blod"><a class="waves-teal waves-effect" href="#">Collections</a></li>
+                    <li class="blod"><a class="waves-teal waves-effect" href="#">Credits</a></li>
                 </ul>
             </nav>
             <div class="nav-content">
                 <div class="nav-content-inner">
-                    <header class="header">
-                        <div class="baner">
-                            <h1>台北古蹟</h1>
-                            <p>清流小黑狗製作</p>
+                    <header class="header indigo-lighten-1">
+                        <div class="article-meta">
+                            <h1 class="article-title">文章標題</h1>
+                            <p>文章描述</p>
                         </div>
                         <ul class="actions">
-                            <a href="#page" class="btn waves-effect waves-light btn-default"><span class="material-icons arrow downward"></span> 進入</a>
                         </ul>
                     </header>
                     <div class="main" id="page">
-                    <article class="article article-type-post">
-                        <p>﻿# Markdown 測試文件 </p>
-                        <h2 id="1-">1. 分級標題</h2>
-                        <h1 id="-">第一級標題</h1>
-                        <h2 id="-">第二級標題</h2>
-                        <h3 id="-">第三級標題</h3>
-                        <hr>
-                        <h2 id="2-">2. 粗體字和斜體字</h2>
-                        <p><strong>這是粗體字</strong></p>
-                        <p><em>這是斜體字</em></p>
-                        <h2 id="3-">3. 超連結</h2>
-                        <p>範例：</p>
-                        <p>這是往 <a href="https://www.google.com.tw/">Google</a> 的連結。
-                            <br>這是往 <a href="https://www.facebook.com/">Facebook</a> 的連結。</p>
-                        <h2 id="4-">4. 文字引用區塊</h2>
-                        <blockquote>
-                            <p>這是引用區塊</p>
-                        </blockquote>
-                        <h2 id="5-">5. 無序列表與有序列表</h2>
-                        <p>這是無序列表的範例：</p>
-                        <ul>
-                            <li>列表一</li>
-                            <li>列表二</li>
-                            <li>列表三</li>
-                        </ul>
-                        <p>這是有序列表的範例：</p>
-                        <ol>
-                            <li>蘋果</li>
-                            <li>橘子</li>
-                            <li>香蕉</li>
-                        </ol>
-                        <h2 id="6-">6. 程式碼區塊</h2>
-                        <p>無高亮範例：</p>
-                        <p><code>Javascript</code>，一種直譯式程式語言，是一種動態型別、基於原型的語言。</p>
-                        <p>高亮顯示：</p>
-                        <pre><code class="lang-javascript">var foo = 1;
+                        <article class="article article-type-post">
+                            <p>﻿# Markdown 測試文件 </p>
+                            <h2 id="1-">1. 分級標題</h2>
+                            <h1 id="-">第一級標題</h1>
+                            <h2 id="-">第二級標題</h2>
+                            <h3 id="-">第三級標題</h3>
+                            <hr>
+                            <h2 id="2-">2. 粗體字和斜體字</h2>
+                            <p><strong>這是粗體字</strong></p>
+                            <p><em>這是斜體字</em></p>
+                            <h2 id="3-">3. 超連結</h2>
+                            <p>範例：</p>
+                            <p>這是往 <a href="https://www.google.com.tw/">Google</a> 的連結。
+                                <br>這是往 <a href="https://www.facebook.com/">Facebook</a> 的連結。</p>
+                            <h2 id="4-">4. 文字引用區塊</h2>
+                            <blockquote>
+                                <p>這是引用區塊</p>
+                            </blockquote>
+                            <h2 id="5-">5. 無序列表與有序列表</h2>
+                            <p>這是無序列表的範例：</p>
+                            <ul>
+                                <li>列表一</li>
+                                <li>列表二</li>
+                                <li>列表三</li>
+                            </ul>
+                            <p>這是有序列表的範例：</p>
+                            <ol>
+                                <li>蘋果</li>
+                                <li>橘子</li>
+                                <li>香蕉</li>
+                            </ol>
+                            <h2 id="6-">6. 程式碼區塊</h2>
+                            <p>無高亮範例：</p>
+                            <p><code>Javascript</code>，一種直譯式程式語言，是一種動態型別、基於原型的語言。</p>
+                            <p>高亮顯示：</p>
+                            <pre><code class="lang-javascript">var foo = 1;
 var bar = 2;
 if (foo + bar &gt;= 3) {
   alert(&quot;foo + bar &gt;= 3&quot;);
   }
 document.write(&quot;Hello, world!&quot;);
 </code></pre>
-                        <h2 id="7-">7. 插入圖片</h2>
-                        <p><img src="https://www.google.com.tw/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google"></p>
-                        <h2 id="8-">8. 刪除線</h2>
-                        <p>這是正確文本。</p>
-                        <p>
-                            <del>這是錯誤的文本。</del>
-                        </p>
-                        <h2 id="9-">9. 表格</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>名稱</th>
-                                    <th>價格</th>
-                                    <th>數量</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>計算機</td>
-                                    <td>800</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>硬碟</td>
-                                    <td>2488</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td>CPU</td>
-                                    <td>12999</td>
-                                    <td>1</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <h2 id="7-">7. 插入圖片</h2>
+                            <p>
+                                <a href="https://www.google.com.tw/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" class="image-link">
+                                    <img class="image" data-mfp-src="https://www.google.com.tw/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" src="https://www.google.com.tw/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
+                                </a>
+                            </p>
+                            <a href="assets/images/5Dga0T0x6GY.jpg" class="image-link">
+                                <img class="image" src="assets/images/5Dga0T0x6GY.jpg" alt="The beautiful ocean"></img>
+                            </a>
+                            <h2 id="8-">8. 刪除線</h2>
+                            <p>這是正確文本。</p>
+                            <p>
+                                <del>這是錯誤的文本。</del>
+                            </p>
+                            <h2 id="9-">9. 表格</h2>
+                            <table class="table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>名稱</th>
+                                        <th>價格</th>
+                                        <th>數量</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>計算機</td>
+                                        <td>800</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>硬碟</td>
+                                        <td>2488</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CPU</td>
+                                        <td>12999</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </article>
+                    </div>
+                    <div class="footer container">
+                        <ul class="inline">
+                            <li>Home</li>
+                            <li>Article</li>
+                            <li><a href="//github.com/junyussh/html-contest" class="footer-links" target="_blank"><i class="material-icons">code</i> 在 Github 上查看我們的源碼</a></li>
+                        </ul>
+                        <p>本網頁由清流小黑狗版權所有</p>
+                        <p>設計參考 <a href="//www.google.com/design/" target="_blank">Google Material Design</a></p>
+                        <p><a class="scrollup">Scroll To Top</a></p>
+    
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/waves.js"></script>
-    <script type="text/javascript">
-    $(".menu").on("click", function() {
-        if ($(this).hasClass("close")) {
-            $(this).css("transform", "rotate(-180deg)").removeClass("close");
-            $(".nav-container").removeClass("nav-menu-open");
-        } else {
-            $(this).css("transform", "rotate(90deg)").addClass("close");
-            $(".nav-container").addClass("nav-menu-open");
-        }
-    })
+    <script src="assets/js/lightbox.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script>
+    $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
     </script>
+    <script type="text/javascript">
+    $(".scroll").on("click", function() {
+        jQuery('html,body').animate({
+            scrollTop: 0
+        }, 0);
+    });
+$(".scrollup").on("click",function() {
+    alert("Hello");
+    $(".fixed-action-btn").addClass("open");
+    alert("World");
+});
+    $(document).ready(function () {
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+
+    $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+});
+    </script>
+
+
 </body>
 
 </html>

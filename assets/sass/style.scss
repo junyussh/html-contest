@@ -5,7 +5,9 @@
 @import "mixin";
 @import "grid";
 @import "waves";
+@import "lightbox";
 @import "icons";
+@import "sidemenu";
 
 @font-face {
     font-family: 'Lato';
@@ -43,14 +45,18 @@ body {
 }
 
 .header {
-    @include background(linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/5Dga0T0x6GY.jpg) no-repeat local center (center / cover));
     @include transition(background 0.3s ease-in-out);
-    height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     justify-content: center;
     position: relative;
+    height: 360px;
+    align-items: center;
+    &.index {
+        @include background(linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/5Dga0T0x6GY.jpg) no-repeat local center (center / cover));
+        height: 100vh;
+    }
     .baner {
         text-align: center;
         h1 {
@@ -61,11 +67,90 @@ body {
             color: #fff;
         }
     }
+    .article-meta {
+        text-align: center;
+        color: #fff;
+        font-weight: 300px;
+        h1 {
+            font-size: 2em;
+        }
+    }
 }
 
 ul.actions {
     list-style: none;
     padding-left: 0;
+}
+
+.fixed-action-btn {
+    position: fixed;
+    bottom: 45px;
+    right: 24px;
+    z-index: 998;
+    .btn-floating {
+        overflow: hidden;
+        @include shadow(1);
+        position: relative;
+        color: #fff;
+        display: inline-block;
+        @include border-radius(100%);
+        background: color("green", "base");
+        width: 37px;
+        height: 37px;
+        line-height: 37px;
+        padding: 0;
+        &:hover {
+            @include shadow(2);
+        }
+        i {
+            width: inherit;
+            display: inline-block;
+            font-size: 1.3rem;
+            text-align: center;
+            top: 0;
+            line-height: 37px;
+        }
+        &.btn-large {
+            i {
+                font-size: 1.6rem;
+                line-height: 55px;
+            }
+            width: 55px;
+            height: 55px;
+        }
+    }
+    &.open {
+        ul {
+            visibility: visible;
+        }
+    }
+    ul {
+        @include transition(visibility 0.3s ease);
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 60px;
+        text-align: center;
+        padding: 0;
+        li {
+            margin-bottom: 15px;
+        }
+        .menu {
+            i {
+                &:before {
+                    content: "\E5D2";
+                }
+            }
+            &.close {
+                i {
+                    &:before {
+                        content: "\E5CD";
+                    }
+                }
+            }
+        }
+    }
 }
 
 @for $i from 1 through 5 {
@@ -76,9 +161,27 @@ ul.actions {
 
 .article {
     background-color: #fff;
-    font-family: "Lato", Helvetica , Arial,"FZLTXHB--B51-0", sans-serif;
     margin: 3em 2em;
     padding: 3em 2em;
+    @include shadow(2);
+    &.article-type-post {
+        position: relative;
+        top: -80px;
+    }
+    .image-meta {
+        display: block;
+        text-align: center;
+        margin-top: 6px;
+        color: color("grey", "darken-1");
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .image-link {
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 ::-webkit-scrollbar-thumb {

@@ -1,6 +1,23 @@
+@charset "UTF-8";
+
 @import "compass/css3";
 @import "variables";
 @import "mixin";
+
+a {
+    text-decoration: none;
+    color: $link-color;
+    &:hover {
+        color: lighten($link-color, 10%);
+        text-decoration: underline;
+        transition: .2s;
+    }
+}
+
+.blod {
+    font-weight: bold;
+}
+
 .btn {
     margin: 5px auto;
     padding: 7px 2rem;
@@ -9,23 +26,116 @@
     text-align: center;
     border: none;
     @include border-radius(3px);
-    @include box-shadow(0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12));
+    @include box-shadow(0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12));
     text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 .btn-default {
-	span {
-		line-height: inherit;
-		font-size: 1.3rem;
-	}
+    span {
+        line-height: inherit;
+        font-size: 1.3rem;
+    }
     color: #fff;
     background-color: $button-color;
-	&:hover {
-		background-color: lighten($button-color,5%);
-		@include shadow(3);
-	}
+    &:hover {
+        background-color: lighten($button-color, 5%);
+        @include shadow(3);
+        color: #fff;
+    }
 }
 
 ol, ul {
     list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 3px 0;
+    &:hover {
+        cursor: zoom-in;
+    }
+    &:after {
+        text-align: center;
+    }
+}
+
+p {
+    line-height: 1.6em;
+    margin: 1.6em 0;
+}
+
+article {
+    ul {
+        list-style: disc;
+    }
+    ol {
+        list-style: decimal;
+    }
+    h1, h2, h3 {
+        font-family: 新細明體;
+    }
+    h2 {
+        padding-bottom: 10px;
+        border-bottom: 2px solid grey;
+    }
+}
+
+.table-striped {
+    width: 100%;
+    max-width: 100%;
+    text-align-last: left;
+    line-height: 1.43;
+    border-collapse: collapse;
+    tbody {
+        th, tr, td {
+            border-top: 1px solid #ddd;
+            padding: 8px;
+        }
+    }
+    tr:nth-child(even) {
+        background-color: $background-color;
+    }
+    thead {
+        th {
+            padding: 8px;
+        }
+        border-bottom: 2px solid #ddd;
+    }
+}
+
+.footer {
+    background: #171f26;
+    position: relative;
+    padding: 40px 0;
+    font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: hsla(0, 0%, 83%, 0.83);
+    &:before,&:after {
+    	display: table;
+    	content: "";
+    }
+    .inline {
+        margin: 0;
+        li {
+            display: inline;
+            margin: 0 5px;
+        }
+    }
+    p {
+    	padding-left: 45px;
+    	margin: 3px 0;
+    }
+    a {
+    	&:hover {
+    		text-decoration: none;
+    		color: #fff;
+    	}
+    }
+    i {
+    	top: 7px;
+    }
 }
