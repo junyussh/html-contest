@@ -27,8 +27,8 @@
         <div class="fixed-action-btn">
             <span class="btn-floating btn-large waves-light waves-effect"><i class="material-icons">&#xE145;</i></span>
             <ul>
-                <li><a href="#page" class="btn-floating waves-effect waves-light orange-base"><i class="material-icons">book</i></a></li>
-                <li><a class="btn-floating waves-effect waves-light blue-base scroll" onclick="jQuery('html,body').animate({scrollTop:0},0);"><i class="material-icons">&#xE25A;</i></a></li>
+                <li><a class="btn-floating waves-effect waves-light orange-base scroll-article"><i class="material-icons">book</i></a></li>
+                <li><a class="btn-floating waves-effect waves-light blue-base scrollup"><i class="material-icons">&#xE25A;</i></a></li>
                 <li><a class="btn-floating waves-effect waves-light cyan-base menu"><i class="material-icons"></i></a></li>
             </ul>
         </div>
@@ -143,10 +143,10 @@ document.write(&quot;Hello, world!&quot;);
                         <ul class="inline">
                             <li>Home</li>
                             <li>Article</li>
-                            <li><a href="//github.com/junyussh/html-contest" class="footer-links" target="_blank"><i class="material-icons">code</i> 在 Github 上查看我們的源碼</a></li>
+                            <li><a href="https://github.com/junyussh/html-contest" class="footer-links" target="_blank"><i class="material-icons">code</i> 在 Github 上查看我們的源碼</a></li>
                         </ul>
                         <p>本網頁由清流小黑狗版權所有</p>
-                        <p>設計參考 <a href="//www.google.com/design/" target="_blank">Google Material Design</a></p>
+                        <p>設計參考 <a href="https://www.google.com/design/" target="_blank">Google Material Design</a></p>
                         <p><a class="scrollup">Scroll To Top</a></p>
     
                     </div>
@@ -157,53 +157,6 @@ document.write(&quot;Hello, world!&quot;);
     <script src="assets/js/waves.js"></script>
     <script src="assets/js/lightbox.min.js"></script>
     <script src="assets/js/index.js"></script>
-    <script>
-    $(function() {
-        $('a[href*="#"]:not([href="#"])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
-    </script>
-    <script type="text/javascript">
-    $(".scroll").on("click", function() {
-        jQuery('html,body').animate({
-            scrollTop: 0
-        }, 0);
-    });
-$(".scrollup").on("click",function() {
-    alert("Hello");
-    $(".fixed-action-btn").addClass("open");
-    alert("World");
-});
-    $(document).ready(function () {
-
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('.scrollup').fadeIn();
-        } else {
-            $('.scrollup').fadeOut();
-        }
-    });
-
-    $('.scrollup').click(function () {
-        $("html, body").animate({
-            scrollTop: 0
-        }, 600);
-        return false;
-    });
-});
-    </script>
-
-
 </body>
 
 </html>
