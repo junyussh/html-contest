@@ -24,10 +24,11 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="nav-container">
+    <div id="progress"><span></span></div>
         <div class="fixed-action-btn">
-            <span class="btn-floating btn-large waves-light waves-effect"><i class="material-icons">&#xE145;</i></span>
+            <span class="btn-floating btn-large waves-light waves-effect green-lighten-1"><i class="material-icons">&#xE145;</i></span>
             <ul>
-                <li><a class="btn-floating waves-effect waves-light orange-base scroll-article"><i class="material-icons">book</i></a></li>
+                <li><a class="btn-floating waves-effect waves-light orange-base scroll-article"><i class="material-icons">import_contacts</i></a></li>
                 <li><a class="btn-floating waves-effect waves-light blue-base scrollup"><i class="material-icons">&#xE25A;</i></a></li>
                 <li><a class="btn-floating waves-effect waves-light cyan-base menu"><i class="material-icons"></i></a></li>
             </ul>
@@ -36,11 +37,14 @@
             <span class="material-icons menu-button waves-effect waves-light"></span>
             <nav class="nav-menu">
                 <ul>
-                    <li class="blod"><a class="waves-teal waves-effect" href="/"><i class="material-icons">home</i> 首頁</a></li>
-                    <li class="blod active"><a class="waves-teal waves-effect" href="#">Location</a></li>
-                    <li class="blod"><a class="waves-teal waves-effect" href="#">Study</a></li>
-                    <li class="blod"><a class="waves-teal waves-effect" href="#">Collections</a></li>
-                    <li class="blod"><a class="waves-teal waves-effect" href="#">Credits</a></li>
+                    <li class="blod"><a class="waves-teal waves-effect" href="index.html"><i class="material-icons">home</i> 首頁</a></li>
+                    <li class="blod"><a class="waves-teal waves-effect" href="posts/what.html"><i class="material-icons">account_balance</i> 關於古蹟</a></li>
+                    <li class="blod active"><a class="waves-teal waves-effect" href="article-list.html"><i class="material-icons">pageview</i> 實察</a></li>
+                    <li class="blod"><a class="waves-teal waves-effect" href="#"><i class="material-icons">photo</i> 參訪照片</a></li>
+                    <li class="blod"><a class="waves-teal waves-effect" href="index.html"><i class="material-icons">description</i> 問卷與分析</a></li>
+                    <li class="blod"><a class="waves-teal waves-effect" href="#"><i class="material-icons">favorite</i> 心得感想</a></li>
+                    <li class="blod"><a class="waves-teal waves-effect" href="#"><i class="material-icons">map</i> 網頁導覽</a></li>
+                    <li class="blod"><a class="waves-teal waves-effect" href="#"><i class="material-icons">attachment</i> 專題簡報</a></li>
                 </ul>
             </nav>
             <div class="nav-content">
@@ -102,7 +106,7 @@ document.write(&quot;Hello, world!&quot;);
                                     <img class="image" data-mfp-src="https://www.google.com.tw/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" src="https://www.google.com.tw/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
                                 </a>
                             </p>
-                            <a href="assets/images/5Dga0T0x6GY.jpg" class="image-link">
+                            <a href="assets/images/5Dga0T0x6GY.jpg" alt="The beautiful ocean" class="image-link">
                                 <img class="image" src="assets/images/5Dga0T0x6GY.jpg" alt="The beautiful ocean"></img>
                             </a>
                             <h2 id="8-">8. 刪除線</h2>
@@ -137,6 +141,10 @@ document.write(&quot;Hello, world!&quot;);
                                     </tr>
                                 </tbody>
                             </table>
+                            <section class="author-box">
+                                <span class="author-pic" style="background-image: url(../assets/images/5Dga0T0x6GY.jpg);"></span>
+                                <span class="author-name">Author</span>
+                            </section>
                         </article>
                     </div>
                     <div class="footer container">
@@ -148,7 +156,6 @@ document.write(&quot;Hello, world!&quot;);
                         <p>本網頁由清流小黑狗版權所有</p>
                         <p>設計參考 <a href="https://www.google.com/design/" target="_blank">Google Material Design</a></p>
                         <p><a class="scrollup">Scroll To Top</a></p>
-    
                     </div>
                 </div>
             </div>

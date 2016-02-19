@@ -1,0 +1,41 @@
+#progress {
+  position: fixed;
+  height: 2px;
+  background: #42A5F5;
+  z-index: 999;
+
+  @include transition(opacity 500ms linear);
+
+  &.done {
+    opacity: 0;
+  }
+
+  span {
+    position: absolute;
+    height: 2px;
+
+    @include box-shadow(#2f9bf4 1px 0 6px 1px);
+
+    @include border-radius(100%);
+
+    opacity: 1;
+    width: 150px;
+    right: -10px;
+
+    @include animation(pulse 2s ease-out 0s infinite);
+  }
+
+  @include keyframes(pulse) {
+    30% {
+      opacity: 0.6;
+    }
+
+    60% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0.6;
+    }
+  }
+}

@@ -1,3 +1,17 @@
+/* Process bar Start */
+$({property: 0}).animate({property: 100}, {
+                duration: 3000,
+                step: function() {
+                    var percentage = Math.round(this.property);
+
+                    $('#progress').css('width',  percentage+"%");
+
+                     if(percentage == 100) {
+                         $("#progress").addClass("done");//完成，隐藏进度条
+                     }
+                }
+            });
+/* Process bar End */
 /* Lightbox Start */
 $(document).ready(function() {
     $('article').magnificPopup({
@@ -62,6 +76,7 @@ $(".scroll-article").on("click", function() {
     }, 1000);
 });
 /* Smooth Scrolling End */
+
 $(".image").each(function() {
     var alt = $(this).attr("alt");
     $(this).after('<span class="image-meta">' + alt + '</span>');

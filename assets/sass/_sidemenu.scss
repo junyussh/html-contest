@@ -1,32 +1,40 @@
 @import "variables";
+
 .nav-menu {
-    .active {
-        background: $list-hover;
+  .active {
+    background: $list-hover;
+  }
+
+  @include transition(all 0.5s ease-in);
+
+  background-color: #fff;
+  text-decoration: none;
+
+  ul {
+    margin: 0;
+    padding-left: 0;
+  }
+
+  li {
+    font-size: 14px;
+    padding: 0 15px;
+
+    a {
+      display: block;
+      line-height: 44px;
+      height: 44px;
+      padding: 0 15px;
+      color: #000 !important;
+      text-decoration: none !important;
+
+      i {
+        padding-right: 3px;
+        top: 5px;
+      }
     }
-    @include transition(all 0.5s ease-in);
-    background-color: #fff;
-    text-decoration: none;
-    ul {
-        margin: 0;
-        padding-left: 0;
+
+    &:hover {
+      background-color: $list-hover;
     }
-    li {
-        font-size: 14px;
-        padding: 0 15px;
-        a {
-            display: block;
-            line-height: 44px;
-            height: 44px;
-            padding: 0 15px;
-            color: #000 !important;
-            text-decoration: none !important;
-            i {
-                padding-right: 3px;
-                top: 5px;
-            }
-        }
-        &:hover {
-            background-color: $list-hover;
-        }
-    }
+  }
 }

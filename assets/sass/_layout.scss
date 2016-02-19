@@ -5,137 +5,287 @@
 @import "mixin";
 
 a {
-    text-decoration: none;
-    color: $link-color;
-    &:hover {
-        color: lighten($link-color, 10%);
-        text-decoration: underline;
-        transition: .2s;
-    }
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover {
+    color: lighten($link-color, 10%);
+    text-decoration: underline;
+    transition: .2s;
+  }
+}
+
+code {
+  font-family: monospace;
 }
 
 .blod {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .btn {
-    margin: 5px auto;
-    padding: 7px 2rem;
-    font-size: 14px;
-    display: inline-block;
-    text-align: center;
-    border: none;
-    @include border-radius(3px);
-    @include box-shadow(0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12));
+  margin: 5px auto;
+  padding: 7px 2rem;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+  border: none;
+
+  @include border-radius(3px);
+
+  @include box-shadow(0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12));
+
+  text-decoration: none;
+
+  &:hover {
     text-decoration: none;
-    &:hover {
-        text-decoration: none;
-    }
+  }
 }
 
 .btn-default {
-    span {
-        line-height: inherit;
-        font-size: 1.3rem;
-    }
+  span {
+    line-height: inherit;
+    font-size: 1.3rem;
+  }
+
+  color: #fff;
+  background-color: $button-color;
+
+  &:hover {
+    background-color: lighten($button-color, 5%);
+
+    @include shadow(3);
+
     color: #fff;
-    background-color: $button-color;
-    &:hover {
-        background-color: lighten($button-color, 5%);
-        @include shadow(3);
-        color: #fff;
-    }
+  }
 }
 
 ol, ul {
-    list-style: none;
+  list-style: none;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 3px 0;
-    &:hover {
-        cursor: zoom-in;
-    }
-    &:after {
-        text-align: center;
-    }
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 3px 0;
+
+  &:hover {
+    cursor: zoom-in;
+  }
+
+  &:after {
+    text-align: center;
+  }
 }
 
 p {
-    line-height: 1.6em;
-    margin: 1.6em 0;
+  line-height: 1.6em;
+  margin: 1.6em 0;
 }
 
 article {
-    ul {
-        list-style: disc;
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  h1, h2, h3 {
+    font-family: 新細明體;
+  }
+
+  h2 {
+    padding-bottom: 10px;
+    border-bottom: 2px solid grey;
+  }
+}
+
+.article-list {
+  position: relative;
+
+  .article-card {
+    @include border-radius(4px);
+
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    margin: 16px;
+    background-color: #fff;
+
+    .article-card-media {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: row;
+      align-items: flex-end;
+      background-size: cover;
+      padding: 24px;
+      cursor: pointer;
+      color: #fafafa;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      h3 {
+        font-size: 34px;
+        line-height: 40px;
+        margin: 0;
+      }
     }
-    ol {
-        list-style: decimal;
+
+    .article-card-support-text {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 16px;
+      min-height: 50px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+
+      .author-pic {
+        @include border-radius(50%);
+
+        margin-right: 16px;
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        margin-right: 1em;
+        background: cover no-repeat;
+        background-size: cover;
+      }
+
+      * {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
     }
-    h1, h2, h3 {
-        font-family: 新細明體;
-    }
-    h2 {
-        padding-bottom: 10px;
-        border-bottom: 2px solid grey;
-    }
+  }
 }
 
 .table-striped {
-    width: 100%;
-    max-width: 100%;
-    text-align-last: left;
-    line-height: 1.43;
-    border-collapse: collapse;
-    tbody {
-        th, tr, td {
-            border-top: 1px solid #ddd;
-            padding: 8px;
-        }
+  width: 100%;
+  max-width: 100%;
+  text-align-last: left;
+  line-height: 1.43;
+  border-collapse: collapse;
+
+  tbody {
+    th, tr, td {
+      border-top: 1px solid #ddd;
+      padding: 8px;
     }
-    tr:nth-child(even) {
-        background-color: $background-color;
+  }
+
+  tr:nth-child(even) {
+    background-color: $background-color;
+  }
+
+  thead {
+    th {
+      padding: 8px;
     }
-    thead {
-        th {
-            padding: 8px;
-        }
-        border-bottom: 2px solid #ddd;
+
+    border-bottom: 2px solid #ddd;
+  }
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  text-align-last: left;
+  line-height: 1.43;
+  border-collapse: collapse;
+
+  tbody {
+    th, tr, td {
+      border-top: 1px solid #ddd;
+      padding: 8px;
     }
+  }
+
+  .table-color {
+    background-color: $background-color;
+  }
+
+  thead {
+    th {
+      padding: 8px;
+    }
+
+    border-bottom: 2px solid #ddd;
+  }
 }
 
 .footer {
-    background: #171f26;
-    position: relative;
-    padding: 40px 0;
-    font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
-    color: hsla(0, 0%, 83%, 0.83);
-    &:before,&:after {
-    	display: table;
-    	content: "";
+  background: #171f26;
+  position: relative;
+  padding: 40px 0;
+  font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: hsla(0, 0%, 83%, 0.83);
+
+  &:before, &:after {
+    display: table;
+    content: "";
+  }
+
+  .inline {
+    margin: 0;
+
+    li {
+      display: inline;
+      margin: 0 5px;
     }
-    .inline {
-        margin: 0;
-        li {
-            display: inline;
-            margin: 0 5px;
-        }
+  }
+
+  p {
+    padding-left: 45px;
+    margin: 3px 0;
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
+      color: #fff;
     }
-    p {
-    	padding-left: 45px;
-    	margin: 3px 0;
-    }
-    a {
-    	&:hover {
-    		text-decoration: none;
-    		color: #fff;
-    	}
-    }
-    i {
-    	top: 7px;
-    }
+  }
+
+  i {
+    top: 7px;
+  }
+}
+
+.author-box {
+  @include shadow(2);
+
+  background: #fff;
+  margin: 20px 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  * {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .author-pic {
+    @include border-radius(50%);
+
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin-right: 1em;
+    background: cover no-repeat;
+  }
+
+  .author-name {
+    font-size: 1.5rem;
+  }
 }
