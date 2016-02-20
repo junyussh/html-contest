@@ -1,22 +1,24 @@
 var gulp = require('gulp'),
     compass = require("gulp-compass"),
-    minifyCSS = require('gulp-cssnano'),
     rename = require("gulp-rename"),
-    connect = require('gulp-connect');
+    connect = require('gulp-connect'),
+marked = require('marked');
+
+marked.setOptions({
+    renderer: new marked.Renderer(),
+    gfm: false,
+    tables: true,
+    breaks: true,
+    pedantic: true,
+    sanitize: false,
+    smartLists: true,
+    smartypants: false
+});
 
 gulp.task('server', function() {
     connect.server({
         livereload: true,
     });
-});
-gulp.task("minifyCSS", ['compass'], function() {
-    return gulp.src('assets/stylesheets/style.css')
-    	.pipe(minifyCSS())
-        .pipe(rename(function(path) {
-            path.basename += ".min";
-            path.extname = ".css";
-        }))
-        .pipe(gulp.dest('assets/stylesheets'));
 });
 gulp.task("compass", function() {
     gulp.src('assets/sass/*.scss')
@@ -28,9 +30,8 @@ gulp.task("compass", function() {
         .pipe(gulp.dest('assets/stylesheets'))
         .pipe(rename(function(path) {
             path.basename += ".min";
-            path.extname = ".css";
+            path.extname = ".html";
         }))
-        .pipe(minifyCSS())
         .pipe(gulp.dest('assets/stylesheets'))
         .pipe(connect.reload());
 });
@@ -38,10 +39,20 @@ gulp.task('html', function() {
     gulp.src('*.html')
         .pipe(connect.reload());
 });
+gulp.task("marked", function() {
+    gulp.src('sources/*.md')
+        .pipe(marked())
+        .pipe(rename(function(path) {
+            path.basename += ".min";
+            path.extname = ".css";
+        }))
+        .pipe(gulp.dest('post'))
+});
 
 gulp.task('watch', function() {
     gulp.watch('assets/sass/*.scss', ['compass']);
     gulp.watch('*.html', ['html']);
+    gulp.watch('post/*.md', ['marked']);
 });
 
-gulp.task('default', ['server', 'watch', 'compass']);
+gulp.task('default', ['server', 'watch', 'compass', "marked"]);

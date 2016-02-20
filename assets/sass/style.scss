@@ -47,7 +47,9 @@ body {
 
 .header {
   @include transition(background 0.3s ease-in-out);
-
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center 92%;
   display: table;
   position: relative;
   width: 100%;
@@ -60,7 +62,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    @include background(linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/5Dga0T0x6GY.jpg) no-repeat local center (center / cover));
+    @include background(url(../images/185334.jpg) no-repeat local center (center / cover));
 
     height: 100vh;
   }
@@ -69,12 +71,12 @@ body {
     text-align: center;
 
     h1 {
-      color: white;
+      color: teal;
       font-family: "Open Sans", Helvetica, sans-serif;
     }
 
     p {
-      color: #fff;
+      color: teal;
     }
   }
 

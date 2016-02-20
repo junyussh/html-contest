@@ -93,9 +93,11 @@ $(".menu-button").on("click", function() {
 $(".menu").on("click", function() {
     if ($(this).hasClass("close")) {
         $(this).removeClass("close");
+        $(".menu-button").css("visibility", "visible");
         $(".nav-container").removeClass("nav-menu-open");
     } else {
         $(this).addClass("close");
+        $(".menu-button").css("visibility", "hidden");
         $(".nav-container").addClass("nav-menu-open");
     }
 });
