@@ -210,6 +210,12 @@ article {
     }
   }
 
+  .table-border {
+    th, tr, td {
+      border: 1px solid #ddd;
+    }
+  }
+
   .table-color {
     background-color: $background-color;
   }

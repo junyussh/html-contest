@@ -34,6 +34,9 @@ body {
 
 .nav-content {
   background-color: $background-color;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 * {
@@ -49,6 +52,7 @@ body {
   @include transition(background 0.3s ease-in-out);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
   background-position: center 92%;
   display: table;
   position: relative;

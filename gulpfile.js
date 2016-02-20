@@ -3,16 +3,7 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
     connect = require('gulp-connect'),
     marked = require('gulp-markdown');
-marked.setOptions({
-    renderer: new marked.Renderer(),
-    gfm: false,
-    tables: true,
-    breaks: true,
-    pedantic: true,
-    sanitize: false,
-    smartLists: true,
-    smartypants: false
-});
+
 
 gulp.task('server', function() {
     connect.server({
@@ -50,7 +41,8 @@ gulp.task("marked", function() {
 gulp.task('watch', function() {
     gulp.watch('assets/sass/*.scss', ['compass']);
     gulp.watch('*.html', ['html']);
-    gulp.watch('post/*.md', ['marked']);
+    gulp.watch('posts/*.html', ['html']);
+    gulp.watch('sources/*.md', ['marked']);
 });
 
 gulp.task('default', ['server', 'watch', 'compass', "marked"]);

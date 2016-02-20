@@ -70,7 +70,8 @@
 
     @include transform-origin(center center);
 
-    color: #c0c0c0;
+    color: color("grey","lighten-2");
+    background-color: color("cyan", "lighten-1");
     position: absolute;
     top: 8px;
     left: 20px;

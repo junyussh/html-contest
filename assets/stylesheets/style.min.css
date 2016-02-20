@@ -570,6 +570,9 @@ article h2 {
   border-top: 1px solid #ddd;
   padding: 8px;
 }
+.table .table-border th, .table .table-border tr, .table .table-border td {
+  border: 1px solid #ddd;
+}
 .table .table-color {
   background-color: #E0E0E0;
 }
@@ -1515,7 +1518,8 @@ img.mfp-img {
   -ms-transform-origin: center center 50%;
   -webkit-transform-origin: center center 50%;
   transform-origin: center center 50%;
-  color: #c0c0c0;
+  color: #E0E0E0;
+  background-color: #26C6DA;
   position: absolute;
   top: 8px;
   left: 20px;
@@ -1627,7 +1631,7 @@ img.mfp-img {
   padding-left: 0;
 }
 .nav-menu li {
-  font-size: 14px;
+  font-size: 16px;
   padding: 0 15px;
 }
 .nav-menu li a {
@@ -1731,6 +1735,9 @@ body {
 
 .nav-content {
   background-color: #E0E0E0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 *, *:before, *:after {
@@ -1746,6 +1753,7 @@ body {
   transition: background 0.3s ease-in-out;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
   background-position: center 92%;
   display: table;
   position: relative;
