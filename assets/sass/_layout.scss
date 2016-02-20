@@ -69,16 +69,15 @@ img {
   height: auto;
   display: block;
   margin: 3px 0;
-
-  &:hover {
-    cursor: zoom-in;
-  }
-
   &:after {
     text-align: center;
   }
 }
-
+.image-link {
+    &:hover {
+    cursor: zoom-in;
+  }
+}
 p {
   line-height: 1.6em;
   margin: 1.6em 0;
@@ -286,9 +285,11 @@ article {
     height: 60px;
     margin-right: 1em;
     background: cover no-repeat;
+    background-size: cover;
   }
 
   .author-name {
     font-size: 1.5rem;
+    font-weight: 600;
   }
 }

@@ -449,11 +449,12 @@ img {
   display: block;
   margin: 3px 0;
 }
-img:hover {
-  cursor: zoom-in;
-}
 img:after {
   text-align: center;
+}
+
+.image-link:hover {
+  cursor: zoom-in;
 }
 
 p {
@@ -632,9 +633,11 @@ article h2 {
   height: 60px;
   margin-right: 1em;
   background: cover no-repeat;
+  background-size: cover;
 }
 .author-box .author-name {
   font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .row:before {
