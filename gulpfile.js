@@ -2,8 +2,7 @@ var gulp = require('gulp'),
     compass = require("gulp-compass"),
     rename = require("gulp-rename"),
     connect = require('gulp-connect'),
-marked = require('marked');
-
+    marked = require('gulp-markdown');
 marked.setOptions({
     renderer: new marked.Renderer(),
     gfm: false,
@@ -30,7 +29,7 @@ gulp.task("compass", function() {
         .pipe(gulp.dest('assets/stylesheets'))
         .pipe(rename(function(path) {
             path.basename += ".min";
-            path.extname = ".html";
+            path.extname = ".css";
         }))
         .pipe(gulp.dest('assets/stylesheets'))
         .pipe(connect.reload());
@@ -40,13 +39,12 @@ gulp.task('html', function() {
         .pipe(connect.reload());
 });
 gulp.task("marked", function() {
-    gulp.src('sources/*.md')
+    return gulp.src('sources/*.md')
         .pipe(marked())
         .pipe(rename(function(path) {
-            path.basename += ".min";
-            path.extname = ".css";
+            path.extname = ".html";
         }))
-        .pipe(gulp.dest('post'))
+        .pipe(gulp.dest('posts'))
 });
 
 gulp.task('watch', function() {
