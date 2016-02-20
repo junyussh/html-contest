@@ -84,9 +84,11 @@ $(".image").each(function() {
 $(".menu-button").on("click", function() {
     if ($(this).hasClass("close")) {
         $(this).css("transform", "rotate(-180deg)").removeClass("close");
+        $(".fixed-action-btn").css("z-index","998");
         $(".nav-container").removeClass("nav-menu-open");
     } else {
         $(this).css("transform", "rotate(90deg)").addClass("close");
+        $(".fixed-action-btn").css("z-index","0");
         $(".nav-container").addClass("nav-menu-open");
     }
 });

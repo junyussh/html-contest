@@ -1892,6 +1892,10 @@ ul.actions {
   text-decoration: none;
 }
 
+.scrollup {
+  cursor: pointer;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #ff5722;
 }
