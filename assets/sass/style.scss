@@ -227,6 +227,17 @@ ul.actions {
   cursor: pointer;
 }
 
+.sitemap-list {
+  position: relative;
+  display: grid;
+  &:before {
+    content: "";
+  }
+  .sitemap {
+    width: 100%;
+    vertical-align: middle;
+  }
+}
 ::-webkit-scrollbar-thumb {
   background: #ff5722;
 }

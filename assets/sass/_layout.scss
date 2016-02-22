@@ -60,6 +60,42 @@ code {
   }
 }
 
+.btn-primary {
+  color: #fff;
+  background-color: $button-primary;
+  &:hover {
+    background-color: lighten($button-primary, 5%);
+
+    @include shadow(3);
+
+    color: #fff;
+  }
+}
+
+.btn-warning {
+  color: #fff;
+  background-color: $button-warning;
+  &:hover {
+    background-color: lighten($button-warning, 5%);
+
+    @include shadow(3);
+
+    color: #fff;
+  }
+}
+
+.btn-success {
+  color: #fff;
+  background-color: $button-success;
+  &:hover {
+    background-color: lighten($button-success, 5%);
+
+    @include shadow(3);
+
+    color: #fff;
+  }
+}
+
 ol, ul {
   list-style: none;
 }
@@ -128,12 +164,15 @@ article {
       a {
         color: inherit;
         text-decoration: none;
+        line-height: 40px;
       }
 
       h3 {
-        font-size: 34px;
-        cursor: pointer;
+        display: block;
         line-height: 40px;
+        font-size: 34px;
+        font-weight: 100;
+        cursor: pointer;
         margin: 0;
       }
     }
@@ -159,7 +198,9 @@ article {
         background: cover no-repeat;
         background-size: cover;
       }
-
+      .author-name {
+        margin-right: 1em;
+      }
       * {
         display: flex;
         flex-direction: column;
@@ -296,6 +337,28 @@ article {
 
   .author-name {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
+    margin-right: 1em;
   }
 }
+
+.gallery {
+  display: inline-block;
+  position: relative;
+  img {
+    width: 7em;
+    height: 6.5em;
+    margin: 3px;
+    @include transition(all .3s ease-in-out);
+    opacity: 0.6;
+    border: 3px solid lighten(color("blue", "base"), 5%);
+    &:hover {
+      opacity: 1;
+      border: 3px solid lighten(color("blue", "base"), 5%);
+    }
+  }
+  .image-link {
+    display: inline-block;
+  }
+}
+

@@ -59,3 +59,6 @@ $colors: ("red": $red, "blue": $blue, "indigo": $indigo, "deep_purple": $deep_pu
 $link-color: color("blue", "base");
 $list-hover: color("grey", "lighten-1");
 $background-color: color("grey", "lighten-2");
+$button-primary: color("red", "lighten-1");
+$button-success: color("green", "lighten-1");
+$button-warning: color("orange", "base");

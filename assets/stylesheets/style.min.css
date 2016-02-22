@@ -439,6 +439,36 @@ code {
   color: #fff;
 }
 
+.btn-primary {
+  color: #fff;
+  background-color: #EF5350;
+}
+.btn-primary:hover {
+  background-color: #f16a67;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  color: #fff;
+}
+
+.btn-warning {
+  color: #fff;
+  background-color: #FF9800;
+}
+.btn-warning:hover {
+  background-color: #ffa21a;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  color: #fff;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #66BB6A;
+}
+.btn-success:hover {
+  background-color: #78c37b;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  color: #fff;
+}
+
 ol, ul {
   list-style: none;
 }
@@ -503,11 +533,14 @@ article h2 {
 .article-list .article-card .article-card-media a {
   color: inherit;
   text-decoration: none;
+  line-height: 40px;
 }
 .article-list .article-card .article-card-media h3 {
-  font-size: 34px;
-  cursor: pointer;
+  display: block;
   line-height: 40px;
+  font-size: 34px;
+  font-weight: 100;
+  cursor: pointer;
   margin: 0;
 }
 .article-list .article-card .article-card-support-text {
@@ -531,6 +564,9 @@ article h2 {
   margin-right: 1em;
   background: cover no-repeat;
   background-size: cover;
+}
+.article-list .article-card .article-card-support-text .author-name {
+  margin-right: 1em;
 }
 .article-list .article-card .article-card-support-text *, .article-list .article-card .article-card-support-text *:before, .article-list .article-card .article-card-support-text *:after {
   display: flex;
@@ -640,7 +676,31 @@ article h2 {
 }
 .author-box .author-name {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
+  margin-right: 1em;
+}
+
+.gallery {
+  display: inline-block;
+  position: relative;
+}
+.gallery img {
+  width: 7em;
+  height: 6.5em;
+  margin: 3px;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.6;
+  border: 3px solid #39a1f4;
+}
+.gallery img:hover {
+  opacity: 1;
+  border: 3px solid #39a1f4;
+}
+.gallery .image-link {
+  display: inline-block;
 }
 
 .row:before {
@@ -1905,6 +1965,18 @@ ul.actions {
 
 .scrollup {
   cursor: pointer;
+}
+
+.sitemap-list {
+  position: relative;
+  display: grid;
+}
+.sitemap-list:before {
+  content: "";
+}
+.sitemap-list .sitemap {
+  width: 100%;
+  vertical-align: middle;
 }
 
 ::-webkit-scrollbar-thumb {
