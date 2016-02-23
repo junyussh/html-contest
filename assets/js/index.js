@@ -1,16 +1,20 @@
 /* Process bar Start */
-$({property: 0}).animate({property: 100}, {
-                duration: 3000,
-                step: function() {
-                    var percentage = Math.round(this.property);
+$({
+    property: 0
+}).animate({
+    property: 100
+}, {
+    duration: 3000,
+    step: function() {
+        var percentage = Math.round(this.property);
 
-                    $('#progress').css('width',  percentage+"%");
+        $('#progress').css('width', percentage + "%");
 
-                     if(percentage == 100) {
-                         $("#progress").addClass("done");//完成，隐藏进度条
-                     }
-                }
-            });
+        if (percentage == 100) {
+            $("#progress").addClass("done"); //完成，隐藏进度条
+        }
+    }
+});
 /* Process bar End */
 /* Lightbox Start */
 $(document).ready(function() {
@@ -64,10 +68,10 @@ $(function() {
 });
 
 $('.scrollup').click(function() {
-$(".nav-content").animate({
-    scrollTop: 0
-}, 1000);
-return false;
+    $(".nav-content").animate({
+        scrollTop: 0
+    }, 1000);
+    return false;
 });
 
 $(".scroll-article").on("click", function() {
@@ -84,11 +88,11 @@ $(".image").each(function() {
 $(".menu-button").on("click", function() {
     if ($(this).hasClass("close")) {
         $(this).css("transform", "rotate(-180deg)").removeClass("close");
-        $(".fixed-action-btn").css("z-index","998");
+        $(".fixed-action-btn").css("z-index", "998");
         $(".nav-container").removeClass("nav-menu-open");
     } else {
         $(this).css("transform", "rotate(90deg)").addClass("close");
-        $(".fixed-action-btn").css("z-index","0");
+        $(".fixed-action-btn").css("z-index", "0");
         $(".nav-container").addClass("nav-menu-open");
     }
 });
@@ -114,4 +118,8 @@ $(".btn-floating").on("click", function() {
         $(".fixed-action-btn").removeClass("open");
     else
         $(".fixed-action-btn").addClass("open");
+});
+$('.enter').magnificPopup({
+  type:'inline',
+  midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
 });
